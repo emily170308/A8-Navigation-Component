@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <!-- HOME -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.bibliotecadigital.ui.HomeFragment"
+        android:label="Início"
+        tools:layout="@layout/fragment_home" />
+
+    <!-- LIVROS -->
+    <fragment
+        android:id="@+id/livrosFragment"
+        android:name="com.example.bibliotecadigital.ui.LivrosFragment"
+        android:label="Livros"
+        tools:layout="@layout/fragment_livros">
+        <action
+            android:id="@+id/action_livrosFragment_to_detalheLivroFragment"
+            app:destination="@id/detalheLivroFragment" />
+    </fragment>
+
+    <!-- DETALHES -->
+    <fragment
+        android:id="@+id/detalheLivroFragment"
+        android:name="com.example.bibliotecadigital.ui.DetalheLivroFragment"
+        android:label="Detalhes do Livro"
+        tools:layout="@layout/fragment_detalhe_livro">
+        <argument
+            android:name="livroId"
+            app:argType="string" />
+    </fragment>
+
+    <!-- PERFIL -->
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.example.bibliotecadigital.ui.PerfilFragment"
+        android:label="Perfil"
+        tools:layout="@layout/fragment_perfil" />
+</navigation>
